@@ -1,0 +1,85 @@
+PrimeiraQuestao
+
+texto =
+
+a) p = π e p∗ = 3  b) p =√2 e p∗ = 1, 414     c) p = e10 e p∗ = 22000    d) p = 9! e p∗ =√18π(9/e)9 
+
+
+p1 =
+
+    3.1416
+
+
+pE1 =
+
+     3
+
+
+ErroAbsoluto1 =
+
+    0.1416
+
+
+ErroRelativo1 =
+
+    0.0451
+
+
+p2 =
+
+    1.4142
+
+
+pE2 =
+
+    1.4140
+
+
+ErroAbsoluto2 =
+
+   2.1356e-04
+
+
+ErroRelativo2 =
+
+   1.5101e-04
+
+
+p3 =
+
+   2.2026e+04
+
+
+pE3 =
+
+       22000
+
+
+ErroAbsoluto3 =
+
+   26.4658
+
+
+ErroRelativo3 =
+
+    0.0012
+
+
+p4 =
+
+      362880
+
+
+pE4 =
+
+   3.5954e+05
+
+
+ErroAbsoluto4 =
+
+   3.3431e+03
+
+
+ErroRelativo4 =
+
+    0.0092
