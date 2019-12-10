@@ -1,0 +1,33 @@
+>> TerceiraQuestao
+
+x0 =
+
+    1.3100
+
+
+y0 =
+
+    3.2400
+
+
+x1 =
+
+    1.9300
+
+
+y1 =
+
+    4.7600
+
+
+pela_1a_Formula =
+
+   -0.0120
+
+
+pela_2a_Formula =
+
+   -0.0120
+   
+%%Vemos que por ambas as formulas temos o mesmo resultado, porem a primeira formula demorou 12 segundos enquanto a segunda, 8 segundos.
+%%Portanto é preferivel usar a segunda formula
