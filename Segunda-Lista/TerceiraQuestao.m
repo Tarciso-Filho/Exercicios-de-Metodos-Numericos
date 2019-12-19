@@ -1,12 +1,7 @@
-x0 = 1.31
-y0 = 3.24
-
-x1 = 1.93
-y1 = 4.76
-
-tic
-pela_1a_Formula = FormulaA( x0,y0,x1,y1 )
-toc
-tic
-pela_2a_Formula = FormulaB( x0,y0,x1,y1 )
-toc
+function acabou = TerceiraQuestao(tol)
+syms x
+expressao = x^2 - 4*x + 3
+[ tempoProcessamento, a,b,c ] = SegundaQuestao( expressao, tol )
+a = ['Metodo de Bissecção' 'Metodo de Newton' 'Metodo da Secante']
+bar( tempoProcessamento )
+acabou = true

@@ -7,7 +7,7 @@ function [tempos resultadoPelaBiseccao resultadoPorNewton resultadoPelaSecante] 
     resultadoPorNewton = MetodoDeNewton( expressao, 100, tolerancia )
     tempoNewton = toc
     tic
-    resultadoPelaSecante = MetodoDaSecante( expressao, 0, 0.5, tolerancia )
+    resultadoPelaSecante = MetodoDaSecante( expressao, 0, 0.19122019, tolerancia )
     tempoSecante = toc
     tempos = [ tempoBisseccao tempoNewton tempoSecante ]
 end
