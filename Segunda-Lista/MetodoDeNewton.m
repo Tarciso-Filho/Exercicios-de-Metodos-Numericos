@@ -1,20 +1,20 @@
-function raizNewton = MetodoDeNewton(expressao, p0)
+function raizNewton = MetodoDeNewton(expressao, p0, TOL)
     syms x
     derivada = diff(expressao)
-    raizNewton = p0
+    raizNewton = []
     for N0 = 1:50
         FP0 = double( subs(expressao,x,p0) )
         GP0 = double( subs(derivada,x,p0) )
-        if abs(GP0) < 0.0000000001
-            GP0 = 0.0000000001
+        if abs(GP0) < TOL
+            GP0 = TOL
         end
         p = p0 - FP0 / GP0
-        if abs(p-p0) < 0.0000000001
-            raizNewton = p;
+        if abs(p-p0) < TOL
+            raizNewton = [raizNewton p];
             break
         end
         p0 = p
+        raizNewton = [raizNewton p0];
         N0
     end
-    raizNewton = p0
 end
