@@ -29,9 +29,9 @@ function raizBisseccao = MetodoDaBiseccao(expressao, a, b, TOL)
             N0
             raizBisseccao = [ raizBisseccao raiz ]
         end
-        %%    if N0 >= 50
-        %       raizBisseccao = double( subs(expressao,x,p) );
-        %    end
+   %    if N0 >= 50
+   %       raizBisseccao = double( subs(expressao,x,p) );
+   %    end
         raizBisseccao
     else
         if abs(Fa) < TOL
