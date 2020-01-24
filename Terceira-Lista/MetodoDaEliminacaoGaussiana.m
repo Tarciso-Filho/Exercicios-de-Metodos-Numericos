@@ -7,13 +7,18 @@ function raizes = MetodoDaEliminacaoGaussiana( sistema )
     n = size( sistema,1 )
     calculos = sistema
     for i = 1:( n - 1 )
+        i
         for p = i:(n+1)
+            p
             if p == n + 1 
-                raizes = NaN(n,1)
-            end
-            if abs( calculos(p,i) ) >= 0,0000000001
+                raizes = NaN(1,n)
                 break
             end
+            if abs( calculos(p,i) ) >= 0,0000000001
+                a_pi = abs( calculos(p,i) )
+                break
+            end
+           
         end
         if p == n + 1
             break
@@ -24,23 +29,30 @@ function raizes = MetodoDaEliminacaoGaussiana( sistema )
             calculos(p,:) = aux
         end
         for j = (i + 1):n
+            j
             m_ji = calculos(j,i) / calculos(i,i)
             reg = calculos(j,:) - calculos(i,:) .* m_ji
             calculos(j,:) = reg
         end
     end
     if p == n + 1
-        break
+        return
     end
-    if calculos(n,n) < 0,0000000001
-        raizes = NaN(n,1)
-        break
+    if abs( calculos(n,n) ) < 0,0000000001
+        a_nn = calculos(n,n)
+        raizes = NaN(1,n)
+        return
     end
     raizes = calculos(n,n+1) / calculos(n,n)
     for i = ( n - 1 ):-1:1
-        raizes = [raizes       ]
-    
-    raizes = raizes(n:-1:1,)
+        i
+        somatorio = 0
+        for j = (i+1):n
+            somatorio = somatorio + calculos(i,j) * raizes(n+1-j) % SEMPRE verifique
+        end
+        raizes = [raizes ( ( calculos( i,(n+1) ) - somatorio ) / calculos(i,i) )]
+    end
+    raizes = raizes(:,n:-1:1)
 end
 
 %O futuro te aguarda
