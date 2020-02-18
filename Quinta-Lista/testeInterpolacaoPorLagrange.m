@@ -1,1 +1,2 @@
-interpolacaoPorLagrange( [-1 0 1], [0 1 0], 3 )
+%fim = interpolacaoPorLagrange( [-1 0 1], [0 1 0], 3 )
+pretty( simplify(fim) )

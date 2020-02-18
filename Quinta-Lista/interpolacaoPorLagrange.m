@@ -9,7 +9,7 @@ function P_x = interpolacaoPorLagrange( a, b, n )
             if k == indice
                 produtorio = produtorio * 1
             else
-                produtorio = produtorio * ( (x - a(indice)) / (a(k) - a(indice) ))
+                produtorio = simplify ( produtorio * ( (x - a(indice)) / (a(k) - a(indice) )) )
             end
         end
         
