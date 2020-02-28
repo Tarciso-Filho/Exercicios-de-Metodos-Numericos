@@ -1,4 +1,4 @@
-function raizes = MetodoDeJacobi( n, A, b, X0, TOL, N )
+function [raizes,matrizConv] = MetodoDeJacobi( n, A, b, X0, TOL, N )
     raizes = X0
     acabou = 0
     for k = 1:(N+1)
@@ -23,13 +23,24 @@ function raizes = MetodoDeJacobi( n, A, b, X0, TOL, N )
         end
         
         acabou = 1
+        maior = 0
         for aux = 1:n
-            if abs( x(aux) - X0(aux) ) >= TOL
+            conv = abs( x(aux) - X0(aux) )
+            if maior <= conv
+                maior = conv
+            end
+            if conv >= TOL
                 acabou = 0
             end
         end
         
         raizes = x
+        
+        if k ~= 1
+            matrizConv = [matrizConv maior]
+        else
+            matrizConv = maior
+        end
         
         if acabou == 0
             X0 = x
